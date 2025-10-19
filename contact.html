@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | The Zuzu’s Café</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alta&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Alta', sans-serif;
+      color: #222;
+      background-color: #fffdf9; /* same ivory background as homepage */
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 40px 20px;
+    }
+    .logo {
+      display: inline-block;
+      letter-spacing: 3px;
+      color: #000;
+    }
+    .logo .first-letter {
+      font-size: 68px;
+      font-weight: normal;
+    }
+    .logo .following {
+      font-size: 48px;
+      font-weight: normal;
+    }
+    nav {
+      margin-top: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin: 0 20px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #b88b4a;
+    }
+    .contact-container {
+      display: flex;
+      font-family: 'Alta Regular', sans-serif;      
+      justify-content: space-between;
+      align-items: stretch;
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .contact-info {
+      font-family: 'Maglisto', sans-serif;
+      width: 45%;
+      padding: 50px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #222;
+    }
+    .contact-info h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #b88b4a;
+    }
+    .contact-info address {
+      margin-top: 20px;
+    }
+    iframe {
+      width: 55%;
+      height: 100%;
+      border: 0;
+    }
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+      .contact-info, iframe {
+        width: 100%;
+        height: auto;
+      }
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 18px;
+      color: #000;
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <span class="first-letter">T</span><span class="following">HE</span>
+      <span class="first-letter"> Z</span><span class="following">UZU’S</span>
+      <span class="first-letter"> C</span><span class="following">AFÉ</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="contact-container">
+    <div class="contact-info">
+      <h2>Visit Us</h2>
+      <address>
+        <strong>The Zuzu’s Café</strong><br>
+        CS-210
+        Capital Cooperative Housing Society, Scheme 33, Karachi<br><br>
+        📞 +92 344 2425396<br>
+        📧 thezuzuscafe.official@gmail.com
+      </address>
+    </div>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.857711414633!2d67.1548045!3d24.9542835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33978edaddf23%3A0xc07d7952e11fb99e!2sThe%20Zuzu's%20Caf%C3%A9!5e0!3m2!1sen!2s!4v1739976780000!5m2!1sen!2s"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <footer>
+    © 2025 The Zuzu’s Café | Crafted with ❤️ in Karachi
+  </footer>
+
+</body>
+</html>
