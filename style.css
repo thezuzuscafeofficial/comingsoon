@@ -200,90 +200,84 @@ footer {
   }
 }
 
-/* === RESPONSIVE DESIGN FIX === */
+/* ====== RESPONSIVE DESIGN (FINAL) ====== */
 
-/* Base adjustments for all devices */
-html, body {
-  overflow-x: hidden;
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 56px;
+  }
+  header h1 span {
+    font-size: 40px;
+  }
 }
 
-/* For tablets and smaller screens */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   header {
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: auto;
-    padding: 15px;
+    padding: 20px;
   }
 
-  .logo {
-    font-size: 48px !important;
+  header h1 {
+    font-size: 42px;
     text-align: center;
-    margin-bottom: 10px;
+  }
+
+  header h1 span {
+    font-size: 32px;
   }
 
   nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    position: static;
+    margin-top: 20px;
   }
 
-  nav a {
-    margin: 6px 10px;
-    font-size: 16px;
-  }
-
-  .hero {
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-  }
-
-  .hero h1 {
-    font-size: 34px;
-    text-align: center;
-  }
-}
-
-/* For small phones */
-@media (max-width: 600px) {
-  header {
-    padding: 10px;
-  }
-
-  .logo {
-    font-size: 40px !important;
-    text-align: center;
-  }
-
-  nav a {
-    display: block;
-    text-align: center;
-    margin: 5px 0;
-  }
-
-  .hero {
-    height: 50vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-
-  .hero h1 {
-    font-size: 28px;
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
   }
 
   .contact-container {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
-  .contact-container iframe {
+  .contact-info, .map-container {
+    width: 100%;
+  }
+
+  .map-container iframe {
     width: 90%;
     height: 300px;
   }
+}
 
-  .contact-container .contact-text {
-    width: 90%;
-    text-align: center;
+@media (max-width: 480px) {
+  header {
+    height: 60vh;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 34px;
+  }
+
+  header h1 span {
+    font-size: 26px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 40px 6%;
   }
 }
