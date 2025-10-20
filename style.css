@@ -1,5 +1,5 @@
-/* ====== THE ZUZU'S CAFE - FINAL STYLE ====== */
-/* v17 – Fixed header, scrolling, full responsive support */
+/* ====== THE ZUZU'S CAFE - FINAL STYLE (v18) ====== */
+/* Shorter banner, full coverage, no grey bars */
 
 /* ====== RESET ====== */
 * {
@@ -41,19 +41,10 @@ header {
   letter-spacing: 3px;
 }
 
-.word {
-  margin-right: 10px;
-}
+.word { margin-right: 10px; }
 
-.first {
-  font-size: 68px;
-  line-height: 1;
-}
-
-.rest {
-  font-size: 48px;
-  line-height: 1;
-}
+.first { font-size: 68px; line-height: 1; }
+.rest { font-size: 48px; line-height: 1; }
 
 /* ====== NAVIGATION ====== */
 nav ul {
@@ -70,14 +61,10 @@ nav ul li a {
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: #7a7a7a;
-}
+nav ul li a:hover { color: #7a7a7a; }
 
-/* ====== BODY SPACING (pushes below header) ====== */
-body {
-  padding-top: 110px; /* Prevents hero from hiding behind header */
-}
+/* ====== BODY SPACING ====== */
+body { padding-top: 110px; }
 
 /* ====== HERO SECTION ====== */
 .hero {
@@ -87,9 +74,10 @@ body {
   justify-content: center;
   text-align: center;
   background: url('https://i.postimg.cc/gkm5R5Dg/Banner.png') no-repeat center center;
-  background-size: cover;
-  min-height: 70vh;
-  overflow: visible;
+  background-size: cover;          /* Ensures full coverage, no grey bars */
+  background-attachment: scroll;   /* Stable on mobile */
+  min-height: 50vh;                /* Reduced height for one-page view */
+  overflow: hidden;
 }
 
 .hero::before {
@@ -104,21 +92,21 @@ body {
   position: relative;
   z-index: 2;
   color: #fff;
-  font-size: 56px;
+  font-size: 50px;
   font-weight: 400;
   background-color: rgba(0, 0, 0, 0.3);
-  padding: 12px 25px;
+  padding: 10px 25px;
   border-radius: 10px;
 }
 
 /* ====== ABOUT SECTION ====== */
 .about {
   text-align: center;
-  padding: 60px 10%;
+  padding: 40px 10%;
 }
 
 .about h2 {
-  font-size: 40px;
+  font-size: 34px;
   margin-bottom: 15px;
 }
 
@@ -139,26 +127,11 @@ body {
   background-color: #1a1a1a;
 }
 
-.contact-info {
-  flex: 1 1 45%;
-}
+.contact-info { flex: 1 1 45%; }
+.contact-info h2 { color: #ffb347; font-size: 28px; margin-bottom: 15px; }
+.contact-info p { color: #ddd; font-size: 15px; line-height: 1.6; }
 
-.contact-info h2 {
-  color: #ffb347;
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.contact-info p {
-  color: #ddd;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.map-container {
-  flex: 1 1 45%;
-}
-
+.map-container { flex: 1 1 45%; }
 .map-container iframe {
   width: 100%;
   height: 350px;
@@ -181,7 +154,8 @@ footer {
 @media (max-width: 992px) {
   .first { font-size: 56px; }
   .rest { font-size: 40px; }
-  .hero h1 { font-size: 48px; }
+  .hero h1 { font-size: 42px; }
+  .hero { min-height: 45vh; }
 }
 
 /* Mobile */
@@ -192,12 +166,9 @@ footer {
     padding: 20px;
   }
 
-  body { padding-top: 160px; }
+  body { padding-top: 150px; }
 
-  .logo {
-    margin-bottom: 10px;
-  }
-
+  .logo { margin-bottom: 10px; }
   .first { font-size: 48px; }
   .rest { font-size: 32px; }
 
@@ -207,12 +178,13 @@ footer {
   }
 
   .hero {
-    min-height: 60vh;
-    background-size: contain;
+    min-height: 45vh;             /* Slightly smaller hero on mobile */
+    background-size: cover;       /* Remove grey bars */
+    background-position: center;
   }
 
   .hero h1 {
-    font-size: 36px;
+    font-size: 32px;
     padding: 8px 15px;
   }
 
@@ -232,7 +204,8 @@ footer {
 @media (max-width: 480px) {
   .first { font-size: 38px; }
   .rest { font-size: 26px; }
-  .hero h1 { font-size: 28px; }
+  .hero h1 { font-size: 26px; }
   body { padding-top: 180px; }
-  section { padding: 40px 6%; }
+  section { padding: 35px 6%; }
+  .hero { min-height: 42vh; }
 }
