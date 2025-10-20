@@ -5,154 +5,216 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Zuzu's Café</title>
 
-  <!-- Google Font (Alta Regular alternative since Alta isn't in Google Fonts) -->
+  <!-- Font -->
   <link href="https://fonts.cdnfonts.com/css/alta" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=9">
-
+  <link rel="stylesheet" href="style.css?v=13">
 
   <style>
-    /* === GLOBAL STYLES === */
+    /* === CORE BRANDING === */
     body {
-      background-color: #f8f6f2; /* Ivory cream tone */
+      background-color: #f8f6f2;
       margin: 0;
       font-family: 'Alta Regular', sans-serif;
       color: #000;
+      overflow-x: hidden;
     }
 
+    /* === HEADER (fixed above banner) === */
     header {
-      text-align: center;
-      padding: 20px 20px 40px 20px;
+      width: 100%;
+      position: relative; /* ensure it stays above hero background */
+      z-index: 10;
+      background-color: #f8f6f2; /* ivory strip behind logo/nav */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
 
-    /* === LOGO STYLE === */
+    /* === LOGO === */
     .logo {
-      display: inline-block;
       color: #000;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      text-transform: uppercase;
       letter-spacing: 3px;
     }
 
     .word {
-      display: inline-block;
-      margin: 0 10px;
+      margin-right: 10px;
     }
 
     .first {
       font-size: 68px;
-      font-weight: normal;
     }
 
     .rest {
       font-size: 48px;
-      font-weight: normal;
     }
 
     /* === NAVIGATION === */
-    nav {
-      text-align: center;
-      margin-top: 10px;
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
     }
 
-    nav a {
+    nav ul li a {
       text-decoration: none;
       color: #000;
-      margin: 0 20px;
       font-size: 20px;
       font-weight: 500;
-      transition: color 0.3s ease;
+      transition: 0.3s;
     }
 
-    nav a:hover {
-      color: #7a7a7a;
+    nav ul li a:hover {
+      color: #666;
     }
 
-    /* === HERO SECTION === */
+    /* === HERO === */
     .hero {
-      background-image: url('https://i.postimg.cc/fRrHb7vK/Generated-Image-October-20-2025-12-48-AM.png');
-      background-size: 100%;
-      background-position: center;
-      height: 40vh;
+      background: url('https://i.postimg.cc/gkm5R5Dg/Banner.png') no-repeat center center;
+      background-size: cover;
+      height: 75vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #fff;
+      position: relative;
+      margin-top: 0; /* no overlap with header */
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
     }
 
     .hero h1 {
-      font-size: 54px;
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      font-size: 56px;
       font-weight: 400;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 10px 20px;
-      border-radius: 12px;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 10px 25px;
+      border-radius: 10px;
     }
 
-    /* === ABOUT SECTION === */
+    /* === ABOUT === */
     .about {
       text-align: center;
-      padding: 20px 20px;
-      max-width: 800px;
-      margin: 0 auto;
+      padding: 60px 10%;
     }
 
     .about h2 {
       font-size: 40px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .about p {
       font-size: 18px;
-      line-height: 1.6;
       color: #333;
+      line-height: 1.6;
     }
 
     /* === FOOTER === */
     footer {
       text-align: center;
-      padding: 40px;
-      font-size: 18px;
+      padding: 25px;
       background-color: #000;
       color: #fff;
+      font-size: 16px;
     }
 
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .logo {
+        margin-bottom: 10px;
+      }
+
+      .first {
+        font-size: 48px;
+      }
+
+      .rest {
+        font-size: 32px;
+      }
+
+      nav ul {
+        flex-direction: row;
+        gap: 15px;
+      }
+
+      .hero {
+        height: 60vh;
+        background-size: contain;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+        padding: 8px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .first {
+        font-size: 38px;
+      }
+
+      .rest {
+        font-size: 26px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- === HEADER / LOGO === -->
+  <!-- HEADER -->
   <header>
     <div class="logo">
-      <span class="word">
-        <span class="first">T</span><span class="rest">HE</span>
-      </span>
-      <span class="word">
-        <span class="first">Z</span><span class="rest">UZU’S</span>
-      </span>
-      <span class="word">
-        <span class="first">C</span><span class="rest">AFÉ</span>
-      </span>
+      <span class="word"><span class="first">T</span><span class="rest">HE</span></span>
+      <span class="word"><span class="first">Z</span><span class="rest">UZU’S</span></span>
+      <span class="word"><span class="first">C</span><span class="rest">AFÉ</span></span>
     </div>
 
-    <!-- === NAVIGATION === -->
     <nav>
-      <a href="index.html">Home</a>
-      <a href="contact.html">Contact</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- === HERO SECTION === -->
+  <!-- HERO -->
   <section class="hero">
     <h1>Where Food Meets Magic...</h1>
   </section>
 
-  <!-- === ABOUT SECTION === -->
+  <!-- ABOUT -->
   <section class="about">
-    <p>
-      Your happy place for comfort food.
-    </p>
-<h2>Coming Soon...</h2>
+    <p>Your happy place for comfort food.</p>
+    <h2>Coming Soon...</h2>
   </section>
 
-  <!-- === FOOTER === -->
+  <!-- FOOTER -->
   <footer>
     © 2025 The Zuzu’s Café | Crafted with ❤️ in Karachi
   </footer>
