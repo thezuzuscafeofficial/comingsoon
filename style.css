@@ -1,82 +1,74 @@
-/* ====== THE ZUZU'S CAFE - FINAL STYLE (v18) ====== */
-/* Shorter banner, full coverage, no grey bars */
-
-/* ====== RESET ====== */
+/* ====== GLOBAL STYLES ====== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html, body {
-  height: auto;
-  min-height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
   font-family: 'Alta Regular', sans-serif;
-  background-color: #f8f6f2; /* Ivory tone */
+}
+
+body {
   color: #000;
+  background-color: #f8f6f2; /* Ivory cream tone */
+  overflow-x: hidden;
 }
 
-/* ====== HEADER ====== */
+/* ====== HEADER / LOGO ====== */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: #f8f6f2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 5%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 40px 20px 20px 20px;
+  position: relative;
 }
 
-/* ====== LOGO ====== */
 .logo {
-  display: flex;
-  align-items: center;
-  text-transform: uppercase;
+  display: inline-block;
+  color: #000;
   letter-spacing: 3px;
 }
 
-.word { margin-right: 10px; }
-
-.first { font-size: 68px; line-height: 1; }
-.rest { font-size: 48px; line-height: 1; }
-
-/* ====== NAVIGATION ====== */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
+.word {
+  display: inline-block;
+  margin: 0 10px;
 }
 
-nav ul li a {
+.first {
+  font-size: 68px;
+  font-weight: normal;
+}
+
+.rest {
+  font-size: 48px;
+  font-weight: normal;
+}
+
+/* ====== NAVIGATION ====== */
+nav {
+  text-align: center;
+  margin-top: 10px;
+}
+
+nav a {
   text-decoration: none;
   color: #000;
+  margin: 0 20px;
   font-size: 20px;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover { color: #7a7a7a; }
+nav a:hover {
+  color: #7a7a7a;
+}
 
-/* ====== BODY SPACING ====== */
-body { padding-top: 110px; }
-
-/* ====== HERO SECTION ====== */
+/* ====== HERO SECTION (FINAL FIX) ====== */
 .hero {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url('https://i.postimg.cc/gkm5R5Dg/Banner.png') no-repeat center center;
-  background-size: cover;          /* Ensures full coverage, no grey bars */
-  background-attachment: scroll;   /* Stable on mobile */
-  min-height: 50vh;                /* Reduced height for one-page view */
+  background: url('https://i.postimg.cc/gkm5R5Dg/Banner.png') center center / cover no-repeat;
+  background-attachment: scroll;
+  height: 42vh;                 /* Reduced for desktop */
   overflow: hidden;
 }
 
@@ -92,7 +84,7 @@ body { padding-top: 110px; }
   position: relative;
   z-index: 2;
   color: #fff;
-  font-size: 50px;
+  font-size: 48px;
   font-weight: 400;
   background-color: rgba(0, 0, 0, 0.3);
   padding: 10px 25px;
@@ -102,18 +94,21 @@ body { padding-top: 110px; }
 /* ====== ABOUT SECTION ====== */
 .about {
   text-align: center;
-  padding: 40px 10%;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .about h2 {
-  font-size: 34px;
-  margin-bottom: 15px;
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #000;
 }
 
 .about p {
   font-size: 18px;
-  color: #333;
   line-height: 1.6;
+  color: #333;
 }
 
 /* ====== CONTACT PAGE ====== */
@@ -124,14 +119,29 @@ body { padding-top: 110px; }
   flex-wrap: wrap;
   gap: 30px;
   padding: 60px 10%;
-  background-color: #1a1a1a;
+  background-color: #f8f6f2;
 }
 
-.contact-info { flex: 1 1 45%; }
-.contact-info h2 { color: #ffb347; font-size: 28px; margin-bottom: 15px; }
-.contact-info p { color: #ddd; font-size: 15px; line-height: 1.6; }
+.contact-info {
+  flex: 1 1 45%;
+}
 
-.map-container { flex: 1 1 45%; }
+.contact-info h2 {
+  color: #000;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.map-container {
+  flex: 1 1 45%;
+}
+
 .map-container iframe {
   width: 100%;
   height: 350px;
@@ -142,10 +152,10 @@ body { padding-top: 110px; }
 /* ====== FOOTER ====== */
 footer {
   background: #000;
-  color: #888;
+  color: #fff;
   text-align: center;
-  padding: 25px;
-  font-size: 15px;
+  padding: 20px;
+  font-size: 14px;
 }
 
 /* ====== RESPONSIVE DESIGN ====== */
@@ -154,58 +164,71 @@ footer {
 @media (max-width: 992px) {
   .first { font-size: 56px; }
   .rest { font-size: 40px; }
-  .hero h1 { font-size: 42px; }
-  .hero { min-height: 45vh; }
+  .hero { height: 38vh; }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
+  header { padding: 25px 10px; }
 
-  body { padding-top: 150px; }
-
-  .logo { margin-bottom: 10px; }
-  .first { font-size: 48px; }
+  .first { font-size: 44px; }
   .rest { font-size: 32px; }
 
+  nav {
+    position: static;
+    margin-top: 15px;
+  }
+
   nav ul {
-    flex-direction: row;
-    gap: 15px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
   }
 
   .hero {
-    min-height: 45vh;             /* Slightly smaller hero on mobile */
-    background-size: cover;       /* Remove grey bars */
-    background-position: center;
+    height: 38vh;
+    background-position: top center;
+    background-size: 100% auto; /* prevents crop + grey bands */
+    background-repeat: no-repeat;
   }
 
   .hero h1 {
-    font-size: 32px;
+    font-size: 30px;
     padding: 8px 15px;
   }
 
   .contact-container {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
 
   .map-container iframe {
-    width: 90%;
     height: 300px;
   }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
+  header { padding: 20px 10px; }
+
   .first { font-size: 38px; }
-  .rest { font-size: 26px; }
-  .hero h1 { font-size: 26px; }
-  body { padding-top: 180px; }
-  section { padding: 35px 6%; }
-  .hero { min-height: 42vh; }
+  .rest { font-size: 28px; }
+
+  .hero {
+    height: 36vh;
+    background-position: center top;
+    background-size: 100% auto;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  section {
+    padding: 40px 6%;
+  }
+
+  footer {
+    font-size: 12px;
+  }
 }
