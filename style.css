@@ -262,11 +262,12 @@ footer {
   }
 
  .contact-info {
+    font-size: 10px;
     width: 100%;           /* full width */
     padding: 0 10px;       /* small horizontal padding */
     word-break: break-word; /* allow long words/emails to wrap */
     overflow-wrap: anywhere; /* wrap anywhere if needed */
-    text-align: center;    /* keep centered */
+    text-align: left;    /* keep centered */
   }
 
   .contact-container {
