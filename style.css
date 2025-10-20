@@ -5,6 +5,10 @@
   font-style: normal;
 }
 
+body, header, footer, .contact-container, .contact-info {
+  font-family: 'Alta Regular', sans-serif;
+}
+
 /* ====== GLOBAL STYLES ====== */
 * {
   margin: 0;
@@ -145,9 +149,21 @@ nav a:hover {
 }
 
 /* ====== CONTACT PAGE ====== */
+
+@font-face {
+  font-family: 'Alta Regular';
+  src: url('fonts/alta-regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, header, footer, .contact-container, .contact-info {
+  font-family: 'Alta Regular', sans-serif;
+}
+
 .contact-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
   gap: 30px;
@@ -173,10 +189,13 @@ nav a:hover {
 
 .map-container {
   flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
 }
 
 .map-container iframe {
   width: 100%;
+  max-width: 500px;
   height: 350px;
   border: none;
   border-radius: 12px;
