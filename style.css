@@ -1,9 +1,16 @@
+@font-face {
+  font-family: 'Alta Regular';
+  src: url('fonts/Alta-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* ====== GLOBAL STYLES ====== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Alta Regular', 'Montserrat', sans-serif;
+  font-family: 'Alta Regular', sans-serif;
 
 }
 
@@ -69,8 +76,26 @@ nav a:hover {
   text-align: center;
   background: url('https://i.postimg.cc/gkm5R5Dg/Banner.png') center center / cover no-repeat;
   background-attachment: scroll;
-  height: 42vh;                 /* Reduced for desktop */
+  height: 42vh;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 36vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 34vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 .hero::before {
