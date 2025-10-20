@@ -1,95 +1,134 @@
-/* ====== GLOBAL STYLES ====== */
+/* ====== THE ZUZU'S CAFE - FINAL STYLE ====== */
+/* v17 – Fixed header, scrolling, full responsive support */
+
+/* ====== RESET ====== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
-body {
-  color: #fff;
-  background-color: #111;
+html, body {
+  height: auto;
+  min-height: 100%;
   overflow-x: hidden;
-}
-
-/* ====== HEADER / HERO SECTION ====== */
-header {
-  background: url('https://i.postimg.cc/fRrHb7vK/Generated-Image-October-20-2025-12-48-AM.png') no-repeat center center;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 1;
-}
-
-header h1 {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  font-weight: 400;
+  overflow-y: auto;
   font-family: 'Alta Regular', sans-serif;
-  text-transform: capitalize;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
+  background-color: #f8f6f2; /* Ivory tone */
+  color: #000;
+}
+
+/* ====== HEADER ====== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #f8f6f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* ====== LOGO ====== */
+.logo {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.word {
+  margin-right: 10px;
+}
+
+.first {
   font-size: 68px;
+  line-height: 1;
 }
 
-header h1 span {
+.rest {
   font-size: 48px;
+  line-height: 1;
 }
 
-nav {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  z-index: 3;
-}
-
+/* ====== NAVIGATION ====== */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 30px;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #fff;
-  font-weight: 400;
-  transition: 0.3s;
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #ffb347;
+  color: #7a7a7a;
 }
 
-/* ====== CONTENT SECTIONS ====== */
-section {
-  padding: 80px 10%;
+/* ====== BODY SPACING (pushes below header) ====== */
+body {
+  padding-top: 110px; /* Prevents hero from hiding behind header */
 }
 
-h2 {
-  font-size: 36px;
-  color: #ffb347;
-  margin-bottom: 20px;
+/* ====== HERO SECTION ====== */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('https://i.postimg.cc/gkm5R5Dg/Banner.png') no-repeat center center;
+  background-size: cover;
+  min-height: 70vh;
+  overflow: visible;
 }
 
-p {
-  line-height: 1.8;
-  font-size: 16px;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
 }
 
-/* ====== CONTACT PAGE LAYOUT ====== */
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 56px;
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 12px 25px;
+  border-radius: 10px;
+}
+
+/* ====== ABOUT SECTION ====== */
+.about {
+  text-align: center;
+  padding: 60px 10%;
+}
+
+.about h2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.about p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ====== CONTACT PAGE ====== */
 .contact-container {
   display: flex;
   justify-content: space-between;
@@ -132,51 +171,49 @@ footer {
   background: #000;
   color: #888;
   text-align: center;
-  padding: 20px;
-  font-size: 14px;
+  padding: 25px;
+  font-size: 15px;
 }
 
-/* ====== RESPONSIVE DESIGN (FINAL) ====== */
+/* ====== RESPONSIVE DESIGN ====== */
 
-@media (max-width: 1024px) {
-  header h1 {
-    font-size: 56px;
-  }
-  header h1 span {
-    font-size: 40px;
-  }
+/* Tablets */
+@media (max-width: 992px) {
+  .first { font-size: 56px; }
+  .rest { font-size: 40px; }
+  .hero h1 { font-size: 48px; }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   header {
-    height: 70vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     padding: 20px;
   }
 
-  header h1 {
-    font-size: 42px;
-    text-align: center;
+  body { padding-top: 160px; }
+
+  .logo {
+    margin-bottom: 10px;
   }
 
-  header h1 span {
-    font-size: 32px;
-  }
-
-  nav {
-    position: static;
-    margin-top: 20px;
-  }
+  .first { font-size: 48px; }
+  .rest { font-size: 32px; }
 
   nav ul {
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .hero {
+    min-height: 60vh;
+    background-size: contain;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    padding: 8px 15px;
   }
 
   .contact-container {
@@ -185,35 +222,17 @@ footer {
     text-align: center;
   }
 
-  .contact-info, .map-container {
-    width: 100%;
-  }
-
   .map-container iframe {
     width: 90%;
     height: 300px;
   }
 }
 
+/* Small Mobile */
 @media (max-width: 480px) {
-  header {
-    height: 60vh;
-    padding: 15px;
-  }
-
-  header h1 {
-    font-size: 34px;
-  }
-
-  header h1 span {
-    font-size: 26px;
-  }
-
-  nav ul li a {
-    font-size: 16px;
-  }
-
-  section {
-    padding: 40px 6%;
-  }
+  .first { font-size: 38px; }
+  .rest { font-size: 26px; }
+  .hero h1 { font-size: 28px; }
+  body { padding-top: 180px; }
+  section { padding: 40px 6%; }
 }

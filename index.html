@@ -7,37 +7,44 @@
 
   <!-- Font -->
   <link href="https://fonts.cdnfonts.com/css/alta" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=15">
 
   <style>
-    /* === CORE BRANDING === */
+    /* === GLOBAL STYLES === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       background-color: #f8f6f2;
-      margin: 0;
       font-family: 'Alta Regular', sans-serif;
       color: #000;
       overflow-x: hidden;
+      padding-top: 110px; /* pushes hero fully below fixed header */
     }
 
-    /* === HEADER (fixed above banner) === */
+    /* === HEADER === */
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      position: relative; /* ensure it stays above hero background */
-      z-index: 10;
-      background-color: #f8f6f2; /* ivory strip behind logo/nav */
+      z-index: 1000;
+      background-color: #f8f6f2;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 5%;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
 
     /* === LOGO === */
     .logo {
-      color: #000;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
+      color: #000;
       text-transform: uppercase;
       letter-spacing: 3px;
     }
@@ -48,10 +55,12 @@
 
     .first {
       font-size: 68px;
+      line-height: 1;
     }
 
     .rest {
       font-size: 48px;
+      line-height: 1;
     }
 
     /* === NAVIGATION === */
@@ -59,8 +68,6 @@
       list-style: none;
       display: flex;
       gap: 30px;
-      margin: 0;
-      padding: 0;
     }
 
     nav ul li a {
@@ -68,11 +75,11 @@
       color: #000;
       font-size: 20px;
       font-weight: 500;
-      transition: 0.3s;
+      transition: color 0.3s ease;
     }
 
     nav ul li a:hover {
-      color: #666;
+      color: #7a7a7a;
     }
 
     /* === HERO === */
@@ -85,7 +92,7 @@
       justify-content: center;
       text-align: center;
       position: relative;
-      margin-top: 0; /* no overlap with header */
+      overflow: hidden;
     }
 
     .hero::before {
@@ -139,10 +146,11 @@
       header {
         flex-direction: column;
         text-align: center;
+        padding: 20px;
       }
 
-      .logo {
-        margin-bottom: 10px;
+      body {
+        padding-top: 160px; /* slightly more spacing for stacked header */
       }
 
       .first {
@@ -151,11 +159,6 @@
 
       .rest {
         font-size: 32px;
-      }
-
-      nav ul {
-        flex-direction: row;
-        gap: 15px;
       }
 
       .hero {
@@ -180,6 +183,10 @@
 
       .hero h1 {
         font-size: 28px;
+      }
+
+      body {
+        padding-top: 180px;
       }
     }
   </style>
