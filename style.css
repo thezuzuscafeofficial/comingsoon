@@ -137,6 +137,13 @@ nav a:hover {
   color: #333;
 }
 
+@font-face {
+  font-family: 'Alta Regular';
+  src: url('fonts/alta-regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* ====== CONTACT PAGE ====== */
 .contact-container {
   display: flex;
