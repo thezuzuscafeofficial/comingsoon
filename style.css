@@ -250,14 +250,14 @@ footer {
   }
 
   .hero {
-    height: 38vh;
+    height: 30vh;
     background-position: top center;
     background-size: 70% auto; /* prevents crop + grey bands */
     background-repeat: no-repeat;
   }
 
   .hero h1 {
-    font-size: 30px;
+    font-size: 34px;
     padding: 8px 15px;
   }
 
