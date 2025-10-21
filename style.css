@@ -167,8 +167,8 @@ body, header, footer, .contact-container, .contact-info {
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
-  gap: 30px;
-  padding: 60px 10%;
+  gap: 2px;
+  padding: 10px 10%;
   background-color: #f8f6f2;
 }
 
